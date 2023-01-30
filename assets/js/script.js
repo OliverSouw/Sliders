@@ -24,13 +24,12 @@ function goNext() {
 }
 
 function updateMargin() {
+    let sliderItemWidth = document.querySelector('.slider-item').clientWidth;
     let sliderWidth = document.querySelector('.slider-item');
     let maxWidth = document.body.clientWidth;
-    let newMargin = (currentSlide * maxWidth);
-
-    console.log(maxWidth)
-    console.log(newMargin)
-    console.log(sliderWidth)
+    let newMargin = (currentSlide * sliderItemWidth);
 
     sliderWidth.style.marginLeft = `-${newMargin}px`;
 }
+
+setInterval(goNext, 5000);
